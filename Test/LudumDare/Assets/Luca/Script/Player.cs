@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private float speedHBase;
     private float speedVBase;
 
+    public bool isPaused;
+
     
     void Start()
     {
@@ -20,20 +22,30 @@ public class Player : MonoBehaviour
     {
         rb.velocity = new Vector2(speedHBase, speedVBase);
 
-        if(Input.GetKey("z")){
-            speedVBase = speedV;
-        }else if(Input.GetKey("s")){
-            speedVBase = -speedV;
-        }else{
-            speedVBase = 0;
+        if(isPaused == false){
+
+           if(Input.GetKey("z")){
+               speedVBase = speedV;
+           }else if(Input.GetKey("s")){
+               speedVBase = -speedV;
+           }else{
+               speedVBase = 0;
+           }
+
+           if(Input.GetKey("q")){
+               speedHBase = -speedH;
+           }else if(Input.GetKey("d")){
+               speedHBase = speedH;
+           }else{
+               speedHBase = 0;
+           }
+
         }
 
-        if(Input.GetKey("q")){
-            speedHBase = -speedH;
-        }else if(Input.GetKey("d")){
-            speedHBase = speedH;
+        if(isPaused){
+            Time.timeScale = 0;
         }else{
-            speedHBase = 0;
+            Time.timeScale = 1;
         }
 
 

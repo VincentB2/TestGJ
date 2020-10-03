@@ -11,11 +11,11 @@ public class Generator : MonoBehaviour
 
     void Start()
     {
-        var randomPaper = GameObject.Find("RandomCode0").GetComponent<RandomPaper>();
+        /*var randomPaper = GameObject.Find("RandomCode0").GetComponent<RandomPaper>();
         genCode0 = randomPaper.GeneratorCode0;
         genCode1 = randomPaper.GeneratorCode1;
         genCode2 = randomPaper.GeneratorCode2;
-        genCode3 = randomPaper.GeneratorCode3;
+        genCode3 = randomPaper.GeneratorCode3;*/
 
         Debug.Log(genCode0);
         Debug.Log(genCode1);
@@ -27,9 +27,11 @@ public class Generator : MonoBehaviour
     void Update()
     {
         var PIH = GameObject.Find("Generator").GetComponent<PlayerIsHere>();
+        var player = GameObject.Find("Player").GetComponent<Player>();
+
         if(PIH.isPlayer){
             if(Input.GetKeyDown("e")){
-                Debug.Log("coucou");
+                player.isPaused = true;
             }
         }
     }
