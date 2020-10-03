@@ -96,6 +96,7 @@ public class DigiCode : MonoBehaviour
                     if(digit[3] == gen.genCode3){
                         Debug.Log("Bien joué");
                         gen.closeDigit();
+                        gen.GeneratorIsOn = true;
                     }else{
                         ButtonErase();
                     }

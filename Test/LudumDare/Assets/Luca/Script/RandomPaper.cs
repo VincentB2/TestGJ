@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class RandomPaper : MonoBehaviour
 {
+    public GameObject RedInk;
+    public GameObject BlueInk;
+    public GameObject GreenInk;
+    public GameObject YellowInk;
     void Start()
     {
         var gen = GameObject.Find("Generator").GetComponent<Generator>();
@@ -17,8 +21,6 @@ public class RandomPaper : MonoBehaviour
         number1.text = gen.genCode1.ToString();
         number2.text = gen.genCode2.ToString();
         number3.text = gen.genCode3.ToString();
-
-
 
         /*GeneratorCode0 = Random.Range(0, 10);
         GeneratorCode1 = Random.Range(0, 10);
@@ -33,5 +35,33 @@ public class RandomPaper : MonoBehaviour
 
     void Update()
     {
+        var redlight =  GameObject.Find("Red").GetComponent<PlayerIsHere>();
+        var bluelight =  GameObject.Find("Blue").GetComponent<PlayerIsHere>();
+        var greenlight =  GameObject.Find("Green").GetComponent<PlayerIsHere>();
+        var yellowlight =  GameObject.Find("Yellow").GetComponent<PlayerIsHere>();
+
+        if(redlight.isPlayer){
+            RedInk.SetActive(false);
+        }else{
+            RedInk.SetActive(true);
+        }
+
+        if(bluelight.isPlayer){
+            BlueInk.SetActive(false);
+        }else{
+            BlueInk.SetActive(true);
+        }
+
+        if(greenlight.isPlayer){
+            GreenInk.SetActive(false);
+        }else{
+            GreenInk.SetActive(true);
+        }
+
+        if(yellowlight.isPlayer){
+            YellowInk.SetActive(false);
+        }else{
+            YellowInk.SetActive(true);
+        }
     }
 }
