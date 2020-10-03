@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 236929760}
   - component: {fileID: 236929759}
   m_Layer: 5
-  m_Name: Options
+  m_Name: Controles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -471,7 +471,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: OPTIONS
+  m_Text: CONTROLES
 --- !u!222 &236929760
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 269806981}
   - component: {fileID: 269806980}
   m_Layer: 5
-  m_Name: ButtonOptions
+  m_Name: ButtonControles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
