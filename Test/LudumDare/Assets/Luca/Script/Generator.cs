@@ -8,6 +8,7 @@ public class Generator : MonoBehaviour
     public int genCode1;    
     public int genCode2;    
     public int genCode3;
+    public GameObject digitUI;
 
     void Start()
     {
@@ -32,7 +33,16 @@ public class Generator : MonoBehaviour
         if(PIH.isPlayer){
             if(Input.GetKeyDown("e")){
                 player.isPaused = true;
+                digitUI.SetActive(true);
             }
         }
+    }
+
+    public void closeDigit(){
+        var PIH = GameObject.Find("Generator").GetComponent<PlayerIsHere>();
+        var player = GameObject.Find("Player").GetComponent<Player>();
+        
+        player.isPaused = false;
+        digitUI.SetActive(false);
     }
 }
