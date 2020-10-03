@@ -37,7 +37,6 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(scaleTime);
         if(Time.time >= timeSave + scaleTime && !(seconds.Value == 59))
         {
 
