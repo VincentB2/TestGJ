@@ -139,7 +139,7 @@ public class TimeManager : MonoBehaviour
         {
             Color color = BGendTime.color;
 
-            color.a = durationLevel / durationLevel * (Time.time - timeSave2) / durationLevel;
+            color.a = durationLevel / durationLevel * ((Time.time - timeSave2) / (durationLevel/2));
             BGendTime.color = color;
             
         }
