@@ -14,11 +14,14 @@ public class TimeManager : MonoBehaviour
     public IntVariable hours;
     public IntVariable totalSeconds;
     private float timeSave;
+    private float timeSave2 = 0;
 
     public int durationLevel;
 
 
     float scaleTime;
+
+    public SpriteRenderer BGendTime;
 
 
     private void Start()
@@ -70,6 +73,8 @@ public class TimeManager : MonoBehaviour
 
         setTime();
 
+        FadeEndTime();
+
         if(totalSeconds.Value >= durationLevel)
         {
             
@@ -120,7 +125,25 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    private void FadeEndTime()
+    {
+        bool canFade = false;
+        
+        
+        if(totalSeconds.Value == durationLevel / 2 && !canFade)
+        {
+            canFade = true;
+            timeSave2 = Time.time;
+        }
+        if(totalSeconds.Value > durationLevel / 2)
+        {
+            Color color = BGendTime.color;
 
+            color.a = durationLevel / durationLevel * (Time.time - timeSave2) / durationLevel;
+            BGendTime.color = color;
+            
+        }
+    }
 
 
 }
