@@ -36,6 +36,7 @@ public class Carton : MonoBehaviour
                             player.fusible3++;
                         }
                     }
+                        FindObjectOfType<AudioManager>().Play("Carton");
                 }
             }
         }

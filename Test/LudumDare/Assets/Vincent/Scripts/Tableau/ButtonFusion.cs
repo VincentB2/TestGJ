@@ -17,6 +17,8 @@ public class ButtonFusion : MonoBehaviour
     public GameObject result10;
     public GameObject poubelle;
 
+    public GameObject fusible;
+
     private void Start()
     {
         ressourcesType = new List<int>();
@@ -80,7 +82,7 @@ public class ButtonFusion : MonoBehaviour
         }
         else if (ressourcesType[0] == 2)
         {
-            if (ressourcesType[1] == 2)
+            if (ressourcesType[1] == 1)
             {
                 Destroy(ressource1);
                 Destroy(ressource2);
@@ -153,6 +155,7 @@ public class ButtonFusion : MonoBehaviour
                 Destroy(ressource1);
                 Destroy(ressource2);
                 Instantiate(result10, caseResult.transform.position, transform.rotation);
+                fusible.SetActive(true);
             }
             else
             {
@@ -167,6 +170,7 @@ public class ButtonFusion : MonoBehaviour
                 Destroy(ressource1);
                 Destroy(ressource2);
                 Instantiate(poubelle, caseResult.transform.position, transform.rotation);
+                fusible.SetActive(true);
 
         }
         else if (ressourcesType[1] == 0)
