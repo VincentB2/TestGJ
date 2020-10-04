@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoulettePapier : MonoBehaviour
 {
+    public GameObject hint;
     void Start()
     {
         
@@ -17,6 +18,7 @@ public class BoulettePapier : MonoBehaviour
         if(boule.isPlayer){
             if(Input.GetKeyDown("e")){
                 player.GetPapier();
+                hint.SetActive(true);
                 Destroy(gameObject);
             }
         }

@@ -7,6 +7,7 @@ public class UIStop : MonoBehaviour
 {
     public float speed;
     public GameObject me;
+    public GameObject coffreFortLike;
     void Start()
     {
         
@@ -41,6 +42,8 @@ public class UIStop : MonoBehaviour
         player.isPaused = false;
         speed = 4;
         me.SetActive(false);
+        Destroy(coffreFortLike);
+
     }
     
     IEnumerator Restart(){

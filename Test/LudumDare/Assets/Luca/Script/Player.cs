@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 
     public GameObject PapierUI;
     public bool HavePapier;
+    public GameObject hint;
 
     public int fusible1;
     public int fusible2;
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour
                 }else{
                     PapierUI.SetActive(true);
                 }
+                hint.SetActive(false);
             }
         }
 
