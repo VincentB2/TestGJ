@@ -66,9 +66,9 @@ public class ButtonFusion : MonoBehaviour
             }
 
         }
-        else if (ressourcesType[1] == 1)
+        else if (ressourcesType[0] == 2)
         {
-            if (ressourcesType[0] == 2)
+            if (ressourcesType[1] == 2)
             {
                 Destroy(ressource1);
                 Destroy(ressource2);
@@ -99,9 +99,9 @@ public class ButtonFusion : MonoBehaviour
             }
 
         }
-        else if (ressourcesType[1] == 4)
+        else if (ressourcesType[0] == 5)
         {
-            if (ressourcesType[0] == 5)
+            if (ressourcesType[1] == 4)
             {
                 Destroy(ressource1);
                 Destroy(ressource2);
@@ -134,9 +134,9 @@ public class ButtonFusion : MonoBehaviour
             }
 
         }
-        else if (ressourcesType[1] == 8)
+        else if (ressourcesType[0] == 9)
         {
-            if (ressourcesType[0] == 9)
+            if (ressourcesType[1] == 8)
             {
                 Destroy(ressource1);
                 Destroy(ressource2);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventaire : MonoBehaviour
 {
-    private List<Transform> emplacements;
+    public List<Transform> emplacements;
 
     public BoolVariable isMaterial1;
     private bool lastMaterial1;
@@ -71,7 +71,7 @@ public class Inventaire : MonoBehaviour
 
 
         //MAT2
-        else if (isMaterial2.Value != lastMaterial2)
+        if (isMaterial2.Value != lastMaterial2)
         {
             if (isMaterial2.Value)
             {
@@ -84,7 +84,7 @@ public class Inventaire : MonoBehaviour
 
 
         //MAT4
-        else if (isMaterial4.Value != lastMaterial4)
+        if (isMaterial4.Value != lastMaterial4)
         {
             if (isMaterial4.Value)
             {
@@ -97,7 +97,7 @@ public class Inventaire : MonoBehaviour
 
 
         //MAT5
-        else if (isMaterial5.Value != lastMaterial5)
+        if (isMaterial5.Value != lastMaterial5)
         {
             if (isMaterial5.Value)
             {
@@ -155,4 +155,6 @@ public class Inventaire : MonoBehaviour
         lastMaterial9 = isMaterial9.Value;
         lastMaterial10 = isMaterial10.Value;
     }
+
+    
 }

@@ -6,10 +6,11 @@ using UnityEngine.Rendering;
 
 public class DragAndDrop : MonoBehaviour
 {
-
+    private List<Transform> emplacements;
     private bool selected;
 
     bool inTableau = false;
+    bool inInventaire = true;
 
     Vector2 posInitiale;
     Vector2 posTableau;
@@ -27,17 +28,25 @@ public class DragAndDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isMouseOver();
+
         if (selected)
         {
             Vector2 cursorPos = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = cursorPos;
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && selected && inInventaire)
         {
             selected = false;
-            if (!inTableau ||nbrFull > 1)
+            ajoutMaterial();
+        }
+        else if(Input.GetMouseButtonUp(0) && selected && !inInventaire)
+        { 
+                selected = false;
+            
+            if (!inTableau ||nbrFull > 1 )
             {
-                ResetPosition();
+                 ResetPosition();
             }
             else
             {
@@ -46,13 +55,21 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
-    private void OnMouseOver()
+    private void isMouseOver()
     {
-        Debug.Log("mouseOver");
-        if (Input.GetMouseButtonDown(0))
+        Vector2 pos = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+        
+
+        if (hit.transform == transform)
         {
-            selected = true;
-            Debug.Log("hi");
+            Debug.Log("mouseOver");
+            if (Input.GetMouseButtonDown(0))
+            {
+                selected = true;
+                transform.parent = null;
+                
+            }
         }
     }
 
@@ -68,6 +85,12 @@ public class DragAndDrop : MonoBehaviour
             posTableau = collision.transform.position;
             transform.parent = collision.transform;
         }
+
+        else if (collision.gameObject.tag == "Inventaire")
+        {
+            inInventaire = true;
+           
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -78,10 +101,30 @@ public class DragAndDrop : MonoBehaviour
             Debug.Log("out");
             transform.parent = null;
         }
+        else if (collision.gameObject.tag == "Inventaire")
+        {
+            inInventaire = false;
+
+        }
     }
 
     public void ResetPosition()
     {
         transform.position = posInitiale;
+    }
+
+    public void ajoutMaterial()
+    {
+        Inventaire inventaire = GameObject.FindGameObjectWithTag("Inventaire").GetComponent<Inventaire>();
+        emplacements = inventaire.emplacements;
+        for (int i = 0; i < emplacements.Count - 1; i++)
+        {
+            if (emplacements[i].childCount == 0)
+            {
+                transform.position = emplacements[i].transform.position;
+                transform.parent = emplacements[i].transform;
+                break;
+            }
+        }
     }
 }
