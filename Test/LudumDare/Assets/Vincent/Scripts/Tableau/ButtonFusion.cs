@@ -162,8 +162,22 @@ public class ButtonFusion : MonoBehaviour
             }
 
         }
+        else if (ressourcesType[0] == 0)
+        {
+                Destroy(ressource1);
+                Destroy(ressource2);
+                Instantiate(poubelle, caseResult.transform.position, transform.rotation);
 
-        
+        }
+        else if (ressourcesType[1] == 0)
+        {
+            Destroy(ressource1);
+            Destroy(ressource2);
+            Instantiate(poubelle, caseResult.transform.position, transform.rotation);
+
+        }
+
+
 
     }
 
