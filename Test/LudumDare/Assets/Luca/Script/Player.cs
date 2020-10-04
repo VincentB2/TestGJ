@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
 
     public bool isPaused;
 
+    public GameObject PapierUI;
+    public bool HavePapier;
+
     
     void Start()
     {
@@ -47,7 +50,20 @@ public class Player : MonoBehaviour
         }else{
             Time.timeScale = 1;
         }
+        if(Input.GetKeyDown("1")){
+            if(HavePapier){
+                if(PapierUI.activeInHierarchy){
+                    PapierUI.SetActive(false);
+                }else{
+                    PapierUI.SetActive(true);
+                }
+            }
+        }
 
 
+    }
+
+    public void GetPapier(){
+        HavePapier = true;
     }
 }

@@ -10,6 +10,10 @@ public class Generator : MonoBehaviour
     public int genCode3;
     public GameObject digitUI;
 
+    public bool GeneratorIsOn;
+    public SpriteRenderer sr;
+    public Sprite On;
+
     void Start()
     {
         /*var randomPaper = GameObject.Find("RandomCode0").GetComponent<RandomPaper>();
@@ -17,6 +21,8 @@ public class Generator : MonoBehaviour
         genCode1 = randomPaper.GeneratorCode1;
         genCode2 = randomPaper.GeneratorCode2;
         genCode3 = randomPaper.GeneratorCode3;*/
+        
+        sr = GetComponent<SpriteRenderer>();
 
         Debug.Log(genCode0);
         Debug.Log(genCode1);
@@ -35,6 +41,10 @@ public class Generator : MonoBehaviour
                 player.isPaused = true;
                 digitUI.SetActive(true);
             }
+        }
+
+        if(GeneratorIsOn){
+            sr.sprite = On;
         }
     }
 
