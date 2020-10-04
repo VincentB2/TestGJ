@@ -16,6 +16,8 @@ public class DragAndDrop : MonoBehaviour
 
     int nbrFull = 0;
 
+    public int type = 0;
+
     private void Start()
     {
         posInitiale = transform.position;
@@ -46,6 +48,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseOver()
     {
+        Debug.Log("mouseOver");
         if (Input.GetMouseButtonDown(0))
         {
             selected = true;
