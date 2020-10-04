@@ -15,14 +15,12 @@ public class ButtonReset : MonoBehaviour
             if(case1.transform.childCount != 0)
             {
                 Transform ressource = case1.transform.GetChild(0);
-                ressource.parent = null;
-                ressource.GetComponent<DragAndDrop>().ResetPosition();
+                ressource.GetComponent<DragAndDrop>().ajoutMaterial();
             }
             if (case2.transform.childCount != 0)
             {
                 Transform ressource = case2.transform.GetChild(0);
-                ressource.parent = null;
-                ressource.GetComponent<DragAndDrop>().ResetPosition();
+                ressource.GetComponent<DragAndDrop>().ajoutMaterial();
             }
         }
     }

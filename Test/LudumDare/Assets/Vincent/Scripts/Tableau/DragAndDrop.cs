@@ -46,7 +46,7 @@ public class DragAndDrop : MonoBehaviour
             
             if (!inTableau ||nbrFull > 1 )
             {
-                 ResetPosition();
+                 ajoutMaterial();
             }
             else
             {
@@ -63,7 +63,6 @@ public class DragAndDrop : MonoBehaviour
 
         if (hit.transform == transform)
         {
-            Debug.Log("mouseOver");
             if (Input.GetMouseButtonDown(0))
             {
                 selected = true;
@@ -80,7 +79,6 @@ public class DragAndDrop : MonoBehaviour
             collision.gameObject.GetComponent<CaseTableau>().full++;
             nbrFull = collision.gameObject.GetComponent<CaseTableau>().full;
             inTableau = true;
-            Debug.Log("in");
             
             posTableau = collision.transform.position;
             transform.parent = collision.transform;
@@ -98,7 +96,6 @@ public class DragAndDrop : MonoBehaviour
         {
             collision.gameObject.GetComponent<CaseTableau>().full--;
             inTableau = false;
-            Debug.Log("out");
             transform.parent = null;
         }
         else if (collision.gameObject.tag == "Inventaire")
@@ -108,10 +105,6 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
-    public void ResetPosition()
-    {
-        transform.position = posInitiale;
-    }
 
     public void ajoutMaterial()
     {
