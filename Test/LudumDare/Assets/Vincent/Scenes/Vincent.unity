@@ -1939,6 +1939,9 @@ MonoBehaviour:
   isPaused: 0
   PapierUI: {fileID: 0}
   HavePapier: 0
+  fusible1: 0
+  fusible2: 0
+  fusible3: 0
 --- !u!50 &846926847
 Rigidbody2D:
   serializedVersion: 4
@@ -2813,6 +2816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1299416592}
   - component: {fileID: 1299416591}
+  - component: {fileID: 1299416593}
   m_Layer: 0
   m_Name: Inventaire
   m_TagString: Untagged
@@ -2892,6 +2896,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1299416593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299416590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2242f812608aa479e324a2ee7fe2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMaterial1: {fileID: 11400000, guid: 0a7033a5217bf8d4982c578713d76f58, type: 2}
+  Mat1: {fileID: 2635194187003362083, guid: a2ca5457db1e6604eb21421e10162fe4, type: 3}
+  isMaterial2: {fileID: 11400000, guid: a278dc065a67bd9489b816de574ecdad, type: 2}
+  Mat2: {fileID: 2635194187003362083, guid: be6969b903c4c6644870477847ea6702, type: 3}
+  isMaterial4: {fileID: 11400000, guid: 7ad1ac65658c4d245980b552a1018f60, type: 2}
+  Mat4: {fileID: 2635194187003362083, guid: 9754f79d65a8d6341bb909e6a7170d74, type: 3}
+  isMaterial5: {fileID: 11400000, guid: e84b01fa8fccc374882cac21474b5911, type: 2}
+  Mat5: {fileID: 2635194187003362083, guid: f0fea69b36e1e8140b4f795d4a9a530a, type: 3}
+  isMaterial8: {fileID: 11400000, guid: 14ea99b1182f183498987cf89735375c, type: 2}
+  Mat8: {fileID: 2635194187003362083, guid: d4b751c6f7a8d934880048f775c9799b, type: 3}
+  isMaterial9: {fileID: 11400000, guid: 20962d9eefff62f47bd0fdba7f233422, type: 2}
+  Mat9: {fileID: 2635194187003362083, guid: a228d55d130916c4e98356de39fc3d4f, type: 3}
+  isMaterial10: {fileID: 11400000, guid: dcf73cd658fe19341aa6f6903a9be358, type: 2}
+  Mat10: {fileID: 2635194187003362083, guid: 8ad92ea5ef9d6d549870bf9e0fb6effb, type: 3}
 --- !u!1 &1489489309
 GameObject:
   m_ObjectHideFlags: 0
