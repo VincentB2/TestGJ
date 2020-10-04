@@ -11,6 +11,7 @@ TagManager:
   - Tableau
   - Lock
   - Interaction
+  - Inventaire
   layers:
   - Default
   - TransparentFX
