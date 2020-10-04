@@ -12,8 +12,6 @@ public class StatueManager : MonoBehaviour
     public GameObject particlesGreen;
     public GameObject particlesRed;
 
-    bool called = false;
-
     public BoolVariable Statues;
 
     void Start()
