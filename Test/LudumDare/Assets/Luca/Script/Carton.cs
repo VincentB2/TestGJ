@@ -9,9 +9,13 @@ public class Carton : MonoBehaviour
     public bool open;
     public bool good;
     public int fuseInside;
+
+    public SpriteRenderer sr;
+    public Sprite OpenS;
+    public Sprite CloseS;
     void Start()
     {
-        
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -34,6 +38,13 @@ public class Carton : MonoBehaviour
                     }
                 }
             }
+        }
+
+
+        if(open){
+            sr.sprite = OpenS;
+        }else{
+            sr.sprite = CloseS;
         }
     }
 }

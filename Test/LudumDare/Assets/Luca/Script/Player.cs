@@ -19,6 +19,13 @@ public class Player : MonoBehaviour
     public int fusible2;
     public int fusible3;
 
+
+    public GameObject uiboulette;
+    public GameObject uifusible1;
+    public GameObject uifusible2;
+    public GameObject uifusible3;
+
+
     
     void Start()
     {
@@ -62,6 +69,30 @@ public class Player : MonoBehaviour
                     PapierUI.SetActive(true);
                 }
             }
+        }
+
+        if(HavePapier){
+            uiboulette.SetActive(true);
+        }else{
+            uiboulette.SetActive(false);
+        }
+
+        if(fusible1 == 1){
+            uifusible1.SetActive(true);
+        }else{
+            uifusible1.SetActive(false);
+        }
+
+        if(fusible2 == 1){
+            uifusible2.SetActive(true);
+        }else{
+            uifusible2.SetActive(false);
+        }
+
+        if(fusible3 == 1){
+            uifusible3.SetActive(true);
+        }else{
+            uifusible3.SetActive(false);
         }
 
 

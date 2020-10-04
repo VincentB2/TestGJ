@@ -9,9 +9,13 @@ public class FusibleReceptacle : MonoBehaviour
     public GameObject door;
 
     public bool isFuse;
+
+    public Sprite WhitS;
+    public Sprite Whitout;
+    public SpriteRenderer sr;
     void Start()
     {
-        
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -19,6 +23,7 @@ public class FusibleReceptacle : MonoBehaviour
         var fuse = me.GetComponent<PlayerIsHere>();
         var player = GameObject.Find("Player").GetComponent<Player>();
         var doorActu = door.GetComponent<BoxCollider2D>();
+        var doorActuAnim = door.GetComponent<Animator>();
 
         if(fuse.isPlayer){
             if(Input.GetKeyDown("e")){
@@ -70,9 +75,17 @@ public class FusibleReceptacle : MonoBehaviour
         }
 
         if(isFuse){
-            doorActu.isTrigger = true;
+            var gen = GameObject.Find("Generator").GetComponent<Generator>();
+            sr.sprite = WhitS;
+            if(gen.GeneratorIsOn){
+                doorActu.isTrigger = true;
+                doorActuAnim.SetTrigger("Open");
+            }
+
         }else{
             doorActu.isTrigger = false;
+            doorActuAnim.SetTrigger("Close");
+            sr.sprite = Whitout;
         }
     }
 }
