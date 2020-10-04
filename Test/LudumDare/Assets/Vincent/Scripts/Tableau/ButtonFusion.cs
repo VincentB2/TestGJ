@@ -35,7 +35,7 @@ public class ButtonFusion : MonoBehaviour
 
         if (hit.transform == transform)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 if (case1.transform.childCount != 0 && case2.transform.childCount != 0)
                 {

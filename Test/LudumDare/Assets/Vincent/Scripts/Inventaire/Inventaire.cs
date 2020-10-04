@@ -180,7 +180,7 @@ public class Inventaire : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         isMaterial1.Value = true;
         yield return new WaitForSeconds(0.1f);
-        GameObject material2 = Instantiate(badMat1, emplacements[place].position, badMat1.transform.rotation);
+        GameObject material2 = Instantiate(badMat2, emplacements[place].position, badMat2.transform.rotation);
         material2.transform.parent = emplacements[place];
         place++;
 
