@@ -46,6 +46,8 @@ public class Inventaire : MonoBehaviour
         isMaterial8.Value = false;
         isMaterial9.Value = false;
         isMaterial10.Value = false;
+        
+        StartCoroutine("Appear");
 
         emplacements = new List<Transform>();
         foreach(Transform emplacement in transform)
@@ -154,6 +156,15 @@ public class Inventaire : MonoBehaviour
         lastMaterial8 = isMaterial8.Value;
         lastMaterial9 = isMaterial9.Value;
         lastMaterial10 = isMaterial10.Value;
+    }
+
+    IEnumerator Appear(){
+        yield return new  WaitForSeconds(0.1f);
+        isMaterial1.Value = true;
+        isMaterial2.Value = true;
+        isMaterial4.Value = true;
+        isMaterial5.Value = true;
+
     }
 
     
