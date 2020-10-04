@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7299a67e4eb845e43b470c051a1c16d4, type: 3}
   m_Name: isMaterial2
   m_EditorClassIdentifier: 
-  Value: 1
+  Value: 0
