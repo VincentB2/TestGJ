@@ -22,26 +22,38 @@ public class ButtonFusion : MonoBehaviour
         ressourcesType = new List<int>();
     }
 
-    private void OnMouseOver()
+    private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        withMouseOver();
+    }
+
+    private void withMouseOver()
+    {
+        Vector2 pos = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+
+
+        if (hit.transform == transform)
         {
-            if(case1.transform.childCount != 0 && case2.transform.childCount != 0)
+            if (Input.GetMouseButtonDown(0))
             {
-                GameObject ressource1 = case1.transform.GetChild(0).gameObject;
-                ressourcesType.Add(ressource1.GetComponent<DragAndDrop>().type);
-                GameObject ressource2 = case2.transform.GetChild(0).gameObject;
-                ressourcesType.Add(ressource2.GetComponent<DragAndDrop>().type);
-                
-                Fusion(ressource1, ressource2);
-                ressourcesType.Clear();
+                if (case1.transform.childCount != 0 && case2.transform.childCount != 0)
+                {
+                    GameObject ressource1 = case1.transform.GetChild(0).gameObject;
+                    ressourcesType.Add(ressource1.GetComponent<DragAndDrop>().type);
+                    GameObject ressource2 = case2.transform.GetChild(0).gameObject;
+                    ressourcesType.Add(ressource2.GetComponent<DragAndDrop>().type);
+
+                    Fusion(ressource1, ressource2);
+                    ressourcesType.Clear();
+                }
+                else
+                {
+                    print("you need 2 elements for create fusion");
+
+                }
+                return;
             }
-            else
-            {
-               print("you need 2 elements for create fusion");
-               
-            }
-            return;
         }
     }
 
