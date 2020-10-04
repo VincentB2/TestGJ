@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
     public GameObject PapierUI;
     public bool HavePapier;
 
+    public int fusible1;
+    public int fusible2;
+    public int fusible3;
+
     
     void Start()
     {
@@ -65,5 +69,15 @@ public class Player : MonoBehaviour
 
     public void GetPapier(){
         HavePapier = true;
+    }
+
+    public void getFusible(int i){
+        if(i == 1){
+            fusible1++;
+        }else if(i == 2){
+            fusible2++;
+        }else if(i == 3){
+            fusible3++;
+        }
     }
 }
