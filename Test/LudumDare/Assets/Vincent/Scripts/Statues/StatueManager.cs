@@ -14,6 +14,8 @@ public class StatueManager : MonoBehaviour
 
     public BoolVariable Statues;
 
+    public GameObject fusible;
+
     void Start()
     {
         Statues.Value = false;
@@ -65,6 +67,7 @@ public class StatueManager : MonoBehaviour
                                 {
                                     Instantiate(particlesGreen, statues[l].transform.position, particlesGreen.transform.rotation);
                                 }
+                                fusible.SetActive(true);
                             }
                         }
                     }
