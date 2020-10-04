@@ -13,6 +13,8 @@ public class DigiCode : MonoBehaviour
 
     public List<int> digit = new List<int>(4);
 
+    public GameObject lightAfterVictory;
+
     void Start()
     {
         digit.Add(0);
@@ -55,6 +57,7 @@ public class DigiCode : MonoBehaviour
             digit[3] = number;
             number3.text = digit[3].ToString();
         }
+        FindObjectOfType<AudioManager>().Play("BipGenerateur");
         whichOne++;
     } 
 
@@ -97,6 +100,7 @@ public class DigiCode : MonoBehaviour
                         Debug.Log("Bien joué");
                         gen.closeDigit();
                         gen.GeneratorIsOn = true;
+                        lightAfterVictory.SetActive(true);
                     }else{
                         ButtonErase();
                     }
@@ -106,9 +110,11 @@ public class DigiCode : MonoBehaviour
             }else{
                 ButtonErase();
             }
+            FindObjectOfType<AudioManager>().Play("BipGenerateur");
         }else{
             ButtonErase();
         }
+        
     }
 
     public void ButtonErase(){
@@ -129,6 +135,7 @@ public class DigiCode : MonoBehaviour
         digit[1] = 0;
         digit[2] = 0;
         digit[3] = 0;
+        FindObjectOfType<AudioManager>().Play("BipGenerateur");
         
     }
 }

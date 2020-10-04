@@ -25,12 +25,14 @@ public class Player : MonoBehaviour
     public GameObject uifusible1;
     public GameObject uifusible2;
     public GameObject uifusible3;
+    public Animator anim;
 
 
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -49,10 +51,18 @@ public class Player : MonoBehaviour
 
            if(Input.GetKey("q")){
                speedHBase = -speedH;
+               transform.eulerAngles = new Vector3(0, 0, 0);
            }else if(Input.GetKey("d")){
                speedHBase = speedH;
+               transform.eulerAngles = new Vector3(0, 180, 0);
            }else{
                speedHBase = 0;
+           }
+
+           if(Input.GetKey("z") || Input.GetKey("q") || Input.GetKey("s") || Input.GetKey("d")){
+               anim.SetTrigger("IsRunning");
+           }else{
+               anim.SetTrigger("Idle");
            }
 
         }
@@ -66,8 +76,10 @@ public class Player : MonoBehaviour
             if(HavePapier){
                 if(PapierUI.activeInHierarchy){
                     PapierUI.SetActive(false);
+                    FindObjectOfType<AudioManager>().Play("Papier");
                 }else{
                     PapierUI.SetActive(true);
+                    FindObjectOfType<AudioManager>().Play("Papier");
                 }
                 hint.SetActive(false);
             }

@@ -19,7 +19,9 @@ public class BoulettePapier : MonoBehaviour
             if(Input.GetKeyDown("e")){
                 player.GetPapier();
                 hint.SetActive(true);
+                FindObjectOfType<AudioManager>().Play("Papier");
                 Destroy(gameObject);
+                
             }
         }
     }

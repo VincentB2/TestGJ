@@ -19,6 +19,7 @@ public class Fusible : MonoBehaviour
         if(fuse.isPlayer){
             if(Input.GetKeyDown("e")){
                 player.getFusible(numberOfFusible);
+                FindObjectOfType<AudioManager>().Play("Fusible");
                 Destroy(gameObject);
             }
         }

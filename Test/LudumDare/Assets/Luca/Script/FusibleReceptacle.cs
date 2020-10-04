@@ -24,6 +24,7 @@ public class FusibleReceptacle : MonoBehaviour
         var player = GameObject.Find("Player").GetComponent<Player>();
         var doorActu = door.GetComponent<BoxCollider2D>();
         var doorActuAnim = door.GetComponent<Animator>();
+        var gen = GameObject.Find("Generator").GetComponent<Generator>();
 
         if(fuse.isPlayer){
             if(Input.GetKeyDown("e")){
@@ -55,8 +56,12 @@ public class FusibleReceptacle : MonoBehaviour
                     }else{
                         Debug.Log("need fuse 3");
                     }
+                    if(gen.GeneratorIsOn){
+                        FindObjectOfType<AudioManager>().Play("Door");
+                    }else{
+                        FindObjectOfType<AudioManager>().Play("Fusible");
+                    }
                 }
-
                 }else{
                     if(numberOfReceptacle == 1){
                         player.fusible1++;
@@ -70,12 +75,12 @@ public class FusibleReceptacle : MonoBehaviour
                         player.fusible3++;
                         isFuse = false;
                 }
+                FindObjectOfType<AudioManager>().Play("Fusible");
                 }
             }
         }
 
         if(isFuse){
-            var gen = GameObject.Find("Generator").GetComponent<Generator>();
             sr.sprite = WhitS;
             if(gen.GeneratorIsOn){
                 doorActu.isTrigger = true;

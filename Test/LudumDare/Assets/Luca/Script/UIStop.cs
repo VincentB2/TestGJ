@@ -42,6 +42,7 @@ public class UIStop : MonoBehaviour
         speed = 4;
         me.SetActive(false);
         Destroy(coffreFortLike);
+        FindObjectOfType<AudioManager>().Play("BipGenerateur");
 
     }
     
@@ -51,6 +52,7 @@ public class UIStop : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
         player.isPaused = false;
         speed = 4;
+        FindObjectOfType<AudioManager>().Play("EchecGenStop");
         //me.SetActive(false);
     }
 }
