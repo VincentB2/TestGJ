@@ -36,6 +36,10 @@ public class Inventaire : MonoBehaviour
 
     private int place = 0;
 
+    public GameObject badMat;
+    public GameObject badMat1;
+    public GameObject badMat2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -160,10 +164,26 @@ public class Inventaire : MonoBehaviour
 
     IEnumerator Appear(){
         yield return new  WaitForSeconds(0.1f);
-        isMaterial1.Value = true;
-        isMaterial2.Value = true;
-        isMaterial4.Value = true;
         isMaterial5.Value = true;
+        yield return new WaitForSeconds(0.1f);
+        GameObject material1 = Instantiate(badMat1, emplacements[place].position, badMat1.transform.rotation);
+        material1.transform.parent = emplacements[place];
+        place++;
+        yield return new WaitForSeconds(0.1f);
+        isMaterial2.Value = true;
+        yield return new WaitForSeconds(0.1f);
+        GameObject material = Instantiate(badMat, emplacements[place].position, badMat.transform.rotation);
+        material.transform.parent = emplacements[place];
+        place++;
+        yield return new WaitForSeconds(0.1f);
+        isMaterial4.Value = true;
+        yield return new WaitForSeconds(0.1f);
+        isMaterial1.Value = true;
+        yield return new WaitForSeconds(0.1f);
+        GameObject material2 = Instantiate(badMat1, emplacements[place].position, badMat1.transform.rotation);
+        material2.transform.parent = emplacements[place];
+        place++;
+
 
     }
 

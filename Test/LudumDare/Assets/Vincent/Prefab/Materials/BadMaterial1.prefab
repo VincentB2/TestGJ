@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2635194187003362082}
   - component: {fileID: 2635194187003362092}
   - component: {fileID: 2635194187003362094}
-  - component: {fileID: -8522739149101160967}
+  - component: {fileID: -7847840315271343526}
   m_Layer: 0
-  m_Name: Material4
+  m_Name: BadMaterial1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 12
-  m_Sprite: {fileID: 21300000, guid: 06b8cc91bb32e77459b11010833c05f3, type: 3}
-  m_Color: {r: 0.7122642, g: 0.7376355, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 456c0e9d938df1e44b9d1e478c0d9171, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0d58109b4cdae4ba68c42816184541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 4
+  type: 10
 --- !u!50 &2635194187003362092
 Rigidbody2D:
   serializedVersion: 4
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!70 &-8522739149101160967
+--- !u!70 &-7847840315271343526
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
