@@ -10,10 +10,9 @@ public class UIStop : MonoBehaviour
     public GameObject coffreFortLike;
     void Start()
     {
-        
     }
 
-    void Update()
+    void FixedUpdate()
     {
         RectTransform rectTransform = GameObject.Find("Lock").GetComponent<RectTransform>();
 
