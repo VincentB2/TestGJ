@@ -80,7 +80,7 @@ public class TimeManager : MonoBehaviour
 
         FadeEndTime();
 
-        if(totalSeconds.Value >= durationLevel && canReset)
+        if(totalSeconds.Value >= durationLevel && canReset.Value)
         {
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
