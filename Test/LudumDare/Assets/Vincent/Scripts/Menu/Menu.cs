@@ -64,4 +64,10 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
 
+    public void returnToMenuFromTheGame(){     
+        var player = GameObject.Find("Player").GetComponent<Player>();
+        player.isPaused = false;
+        SceneManager.LoadScene("Menu 1", LoadSceneMode.Single);
+    }
+
 }

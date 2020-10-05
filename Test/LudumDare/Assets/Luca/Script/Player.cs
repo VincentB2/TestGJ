@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     public GameObject uifusible3;
     public Animator anim;
 
+    public GameObject menuPause;
+
 
     
     void Start()
@@ -63,6 +65,11 @@ public class Player : MonoBehaviour
                anim.SetTrigger("IsRunning");
            }else{
                anim.SetTrigger("Idle");
+           }
+
+           if(Input.GetKeyDown(KeyCode.Escape)){
+               isPaused = true;
+               menuPause.SetActive(true);
            }
 
         }
@@ -124,5 +131,11 @@ public class Player : MonoBehaviour
         }else if(i == 3){
             fusible3++;
         }
+    }
+
+
+    public void backToTheGame(){
+        isPaused = false;
+        menuPause.SetActive(false);
     }
 }
