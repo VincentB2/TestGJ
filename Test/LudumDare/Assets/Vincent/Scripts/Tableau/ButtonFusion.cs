@@ -63,14 +63,17 @@ public class ButtonFusion : MonoBehaviour
 
     void Fusion(GameObject ressource1, GameObject ressource2)
     {
+        FindObjectOfType<AudioManager>().Play("elementsMaybe");
         // RETURN OBJECT 8
-        if(ressourcesType[0] == 1)
+        if (ressourcesType[0] == 1)
         {
-            if(ressourcesType[1] == 2)
+            
+            if (ressourcesType[1] == 2)
             {
                 Destroy(ressource1);
                 Destroy(ressource2);
                 Instantiate(result8, caseResult.transform.position, transform.rotation);
+                
             }
             else
             {
@@ -156,6 +159,7 @@ public class ButtonFusion : MonoBehaviour
                 Destroy(ressource2);
                 Instantiate(result10, caseResult.transform.position, transform.rotation);
                 fusible.SetActive(true);
+                FindObjectOfType<AudioManager>().Play("WinSoundEffect");
             }
             else
             {

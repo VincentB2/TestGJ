@@ -51,6 +51,7 @@ public class DragAndDrop : MonoBehaviour
             else
             {
                 transform.position = posTableau;
+                FindObjectOfType<AudioManager>().Play("StatueGoodCristal");
             }
         }
     }

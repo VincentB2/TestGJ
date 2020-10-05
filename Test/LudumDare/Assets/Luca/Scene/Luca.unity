@@ -17469,7 +17469,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Reset
     clip: {fileID: 8300000, guid: a46383ede79303141916ce1eda634710, type: 3}
-    volume: 0.5
+    volume: 0.7
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -17493,6 +17493,18 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Door
     clip: {fileID: 8300000, guid: 5bf15c9e32aaee54c942cb9975ce9bd8, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WinSoundEffect
+    clip: {fileID: 8300000, guid: fce54d99c519f2243abfecf530460d57, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: elementsMaybe
+    clip: {fileID: 8300000, guid: 5a973a1a7aa20194197dfb90cce0fba8, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0

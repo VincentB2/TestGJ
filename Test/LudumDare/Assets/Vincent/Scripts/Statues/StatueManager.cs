@@ -43,6 +43,7 @@ public class StatueManager : MonoBehaviour
                         if(statueOrder[j] != requestedOrder[j])
                         {
                             Debug.Log("Wrong");
+                            FindObjectOfType<AudioManager>().Play("StatueBad");
                             Instantiate(particlesRed, statues[i].transform.position, particlesRed.transform.rotation);
                             for(int k = 0; k < statueOrder.Count-1; k++)
                             {
@@ -55,6 +56,7 @@ public class StatueManager : MonoBehaviour
                         else if (statueOrder[j] == requestedOrder[j])
                         {
                             Debug.Log("Right number");
+                            FindObjectOfType<AudioManager>().Play("StatueGoodCristal");
                             if (j == statueOrder.Count-1)
                             {
                                 Instantiate(particlesGreen, statues[i].transform.position, particlesGreen.transform.rotation);
@@ -68,6 +70,7 @@ public class StatueManager : MonoBehaviour
                                     Instantiate(particlesGreen, statues[l].transform.position, particlesGreen.transform.rotation);
                                 }
                                 fusible.SetActive(true);
+                                FindObjectOfType<AudioManager>().Play("WinSoundEffect");
                             }
                         }
                     }
