@@ -143,6 +143,7 @@ public class ButtonFusion : MonoBehaviour
                 Destroy(ressource2);
                 Instantiate(result10, caseResult.transform.position, transform.rotation);
                 fusible.SetActive(true);
+                FindObjectOfType<AudioManager>().Play("WinSoundEffect");
             }
             else
             {

@@ -1286,7 +1286,7 @@ RectTransform:
   - {fileID: 213386657}
   - {fileID: 2042951966}
   m_Father: {fileID: 1333326007}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3450,6 +3450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7457d01b98dc8d741b7bb8c836ad5020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flash: {fileID: 1559335222}
   secondsTXT: {fileID: 651413483}
   minutesTXT: {fileID: 119281029}
   hoursTXT: {fileID: 1740769833}
@@ -3459,7 +3460,7 @@ MonoBehaviour:
   totalSeconds: {fileID: 11400000, guid: 0ca423e8a2133d44f8230146e7fb055e, type: 2}
   durationLevel: 60
   BGendTime: {fileID: 1839759200}
-  OneTime: 0
+  canReset: {fileID: 11400000, guid: 3480859d609625a4daa27859e3ee1f00, type: 2}
 --- !u!1 &327034608
 GameObject:
   m_ObjectHideFlags: 0
@@ -9596,7 +9597,7 @@ RectTransform:
   - {fileID: 1252155582}
   - {fileID: 112876736}
   m_Father: {fileID: 1333326007}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11526,11 +11527,11 @@ RectTransform:
   - {fileID: 1770364431}
   - {fileID: 1651812458}
   - {fileID: 156128631}
-  - {fileID: 1559335221}
   - {fileID: 122394276}
   - {fileID: 1557762429}
   - {fileID: 1073723074}
   - {fileID: 1909014226}
+  - {fileID: 1559335221}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13386,7 +13387,7 @@ RectTransform:
   m_Children:
   - {fileID: 923698956}
   m_Father: {fileID: 1333326007}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13405,8 +13406,10 @@ GameObject:
   - component: {fileID: 1559335224}
   - component: {fileID: 1559335223}
   - component: {fileID: 1559335222}
+  - component: {fileID: 1559335226}
+  - component: {fileID: 1559335225}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13424,7 +13427,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1333326007}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13488,6 +13491,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559335220}
   m_CullTransparentMesh: 0
+--- !u!225 &1559335225
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559335220}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!223 &1559335226
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559335220}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1577360695
 GameObject:
   m_ObjectHideFlags: 0
@@ -16429,7 +16465,7 @@ RectTransform:
   - {fileID: 1791616011}
   - {fileID: 1876471108}
   m_Father: {fileID: 1333326007}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -17503,6 +17539,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4d227ef1ab15d49a526c47b3c02842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flash: {fileID: 1559335222}
+  canReset: {fileID: 11400000, guid: 3480859d609625a4daa27859e3ee1f00, type: 2}
 --- !u!1 &2025402711
 GameObject:
   m_ObjectHideFlags: 0

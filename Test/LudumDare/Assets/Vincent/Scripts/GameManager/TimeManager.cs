@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
+    public Animator flash;
     public TMP_Text secondsTXT;
     public TMP_Text minutesTXT;
     public TMP_Text hoursTXT;
@@ -24,7 +25,9 @@ public class TimeManager : MonoBehaviour
 
     public Image BGendTime;
 
-    public bool OneTime;
+   private bool OneTime = true;
+   private bool OneTime2 = true;
+    public BoolVariable canReset;
 
 
     private void Start()
@@ -77,16 +80,21 @@ public class TimeManager : MonoBehaviour
 
         FadeEndTime();
 
-        if(totalSeconds.Value >= durationLevel)
+        if(totalSeconds.Value >= durationLevel && canReset)
         {
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
         }
 
-        if(totalSeconds.Value == 47){
-            if(OneTime == false){
-                FindObjectOfType<AudioManager>().Play("Reset");
-            }
+        if(totalSeconds.Value == 47 && OneTime){
+            OneTime = false;
+            FindObjectOfType<AudioManager>().Play("Reset");
+            
+        }
+        if (totalSeconds.Value == 58 && OneTime2)
+        {
+            OneTime2 = false;        
+            flash.SetTrigger("Fast");  
         }
     }
 
