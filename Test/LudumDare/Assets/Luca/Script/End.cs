@@ -32,7 +32,7 @@ public class End : MonoBehaviour
         canReset.Value = false;
         flash.SetTrigger("Slow");
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("End", LoadSceneMode.Single);
+        SceneManager.LoadScene("LucaEnd", LoadSceneMode.Single);
     }
 
 }

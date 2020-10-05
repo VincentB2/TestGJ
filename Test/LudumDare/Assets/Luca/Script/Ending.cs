@@ -16,7 +16,7 @@ public class Ending : MonoBehaviour
     }
 
     IEnumerator end(){
-        yield return new WaitForSeconds(4.05f);
-        SceneManager.LoadScene("Luca", LoadSceneMode.Single);
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene("Credits", LoadSceneMode.Single);
     }
 }

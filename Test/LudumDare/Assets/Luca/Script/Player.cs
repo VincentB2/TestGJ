@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
     public GameObject menuPause;
 
-
+    public BoolVariable canReset;
     
     void Start()
     {
@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
                anim.SetTrigger("Idle");
            }
 
-           if(Input.GetKeyDown(KeyCode.Escape)){
+           if(Input.GetKeyDown(KeyCode.Escape) && canReset.Value){
                isPaused = true;
                menuPause.SetActive(true);
            }
