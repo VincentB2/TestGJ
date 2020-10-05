@@ -83,7 +83,7 @@ public class TimeManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
         }
 
-        if(totalSeconds.Value == 48){
+        if(totalSeconds.Value == 47){
             if(OneTime == false){
                 FindObjectOfType<AudioManager>().Play("Reset");
             }

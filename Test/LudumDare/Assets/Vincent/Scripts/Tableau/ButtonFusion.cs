@@ -142,6 +142,7 @@ public class ButtonFusion : MonoBehaviour
                 Destroy(ressource1);
                 Destroy(ressource2);
                 Instantiate(result10, caseResult.transform.position, transform.rotation);
+                fusible.SetActive(true);
             }
             else
             {
@@ -174,7 +175,7 @@ public class ButtonFusion : MonoBehaviour
                 Destroy(ressource1);
                 Destroy(ressource2);
                 Instantiate(poubelle, caseResult.transform.position, transform.rotation);
-                fusible.SetActive(true);
+               
 
         }
         else if (ressourcesType[1] == 0)

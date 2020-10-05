@@ -42,7 +42,8 @@ public class UIStop : MonoBehaviour
         speed = 4;
         me.SetActive(false);
         Destroy(coffreFortLike);
-        FindObjectOfType<AudioManager>().Play("BipGenerateur");
+        FindObjectOfType<AudioManager>().Play("Success");
+
 
     }
     

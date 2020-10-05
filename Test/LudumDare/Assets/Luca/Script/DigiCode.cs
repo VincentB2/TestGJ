@@ -98,6 +98,8 @@ public class DigiCode : MonoBehaviour
                 if(digit[2] == gen.genCode2){
                     if(digit[3] == gen.genCode3){
                         Debug.Log("Bien joué");
+                        FindObjectOfType<AudioManager>().Play("Success");
+                        FindObjectOfType<AudioManager>().Play("Electricity");
                         gen.closeDigit();
                         gen.GeneratorIsOn = true;
                         lightAfterVictory.SetActive(true);

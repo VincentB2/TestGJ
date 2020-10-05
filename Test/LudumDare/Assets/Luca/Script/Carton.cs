@@ -28,7 +28,8 @@ public class Carton : MonoBehaviour
                 if(open == false){
                     open = true;
                     if(good == true){
-                        if(fuseInside == 1){
+                        FindObjectOfType<AudioManager>().Play("WinSoundEffect");
+                        if (fuseInside == 1){
                             player.fusible1++;
                         }else if(fuseInside == 2){
                             player.fusible2++;
