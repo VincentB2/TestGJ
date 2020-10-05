@@ -56,12 +56,12 @@ public class FusibleReceptacle : MonoBehaviour
                     }else{
                         Debug.Log("need fuse 3");
                     }
+                }
                     if(gen.GeneratorIsOn){
                         FindObjectOfType<AudioManager>().Play("Door");
                     }else{
                         FindObjectOfType<AudioManager>().Play("Fusible");
                     }
-                }
                 }else{
                     if(numberOfReceptacle == 1){
                         player.fusible1++;
