@@ -24,6 +24,8 @@ public class TimeManager : MonoBehaviour
 
     public Image BGendTime;
 
+    public bool OneTime;
+
 
     private void Start()
     {
@@ -79,6 +81,12 @@ public class TimeManager : MonoBehaviour
         {
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        }
+
+        if(totalSeconds.Value == 48){
+            if(OneTime == false){
+                FindObjectOfType<AudioManager>().Play("Reset");
+            }
         }
     }
 
